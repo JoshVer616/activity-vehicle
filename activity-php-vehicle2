@@ -1,0 +1,14 @@
+<?php
+
+class Vehicle2 {
+  
+}
+
+
+$car = new Vehicle2();
+
+
+if ($car instanceof Vehicle2) {
+    echo "The object \$car is an instance of the Vehicle class.\n";
+}
+?>

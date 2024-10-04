@@ -1,0 +1,56 @@
+<?php
+
+class Vehicle5 {
+    public $name;
+    public $speed;
+    public $mileage;
+    
+   
+    public static $fuel_type = "Diesel";
+
+    
+    public function __construct($name, $speed, $mileage) {
+        $this->name = $name;
+        $this->speed = $speed;
+        $this->mileage = $mileage;
+    }
+
+
+    public function displayInfo() {
+        echo "Vehicle Name: " . $this->name . "\n";
+        echo "Speed: " . $this->speed . " km/h\n";
+        echo "Mileage: " . $this->mileage . " km/l\n";
+        echo "Fuel Type: " . self::$fuel_type . "\n"; 
+    }
+}
+class Bus extends Vehicle5 {
+    
+    public function seating_capacity($capacity = 50) {
+        echo "Seating Capacity: " . $capacity . " passengers\n";
+    }
+}
+class Car extends Vehicle5 {
+    // Method specific to Car (if needed)
+}
+
+
+$bus = new Bus("School Bus", 60, 6);
+$car = new Car("Sedan", 120, 15);
+
+
+$bus->displayInfo();
+echo "\n";
+$car->displayInfo();
+echo "\n";
+
+
+echo "Fuel type for all vehicles: " . Vehicle5::$fuel_type . "\n";
+
+
+Vehicle5::$fuel_type = "Electric";
+
+
+$bus->displayInfo();
+echo "\n";
+$car->displayInfo();
+?>

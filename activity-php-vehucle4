@@ -1,0 +1,35 @@
+<?php
+class Vehicle4 {
+    public $name;
+    public $speed;
+    public $mileage;
+
+    
+    public function __construct($name, $speed, $mileage) {
+        $this->name = $name;
+        $this->speed = $speed;
+        $this->mileage = $mileage;
+    }
+
+ 
+    public function displayInfo() {
+        echo "Vehicle Name: " . $this->name . "\n";
+        echo "Speed: " . $this->speed . " km/h\n";
+        echo "Mileage: " . $this->mileage . " km/l\n";
+    }
+}
+class Bus extends Vehicle4 {
+    
+    public function seating_capacity($capacity = 30) {
+        echo "Seating Capacity: " . $capacity . " passengers\n";
+    }
+}
+
+
+$bus = new Bus("Saulog Bus", 60, 6);
+
+
+$bus->displayInfo();
+$bus->seating_capacity(); 
+$bus->seating_capacity(50); 
+?>
